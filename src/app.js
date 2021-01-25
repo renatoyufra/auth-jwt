@@ -4,14 +4,20 @@ const createError = require("http-errors");
 
 require("dotenv").config();
 
+// Importing routes
 const AuthRoute = require("./routes/auth");
 
+// Initialization
 const app = express();
+
+// middlewares
 app.use(morgan("dev"));
 
 app.get("/", async (req, res, next) => {
     res.send("Hello cuy.");
 });
+
+// routes
 
 app.use("/auth", AuthRoute);
 
