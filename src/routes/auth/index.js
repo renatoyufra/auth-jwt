@@ -1,12 +1,23 @@
-const express = require("express");
-const router = express.Router();
+import { Router } from "express";
+import User from "../../models/User";
+const router = Router();
 
 router.post("/register", async (req, res, next) => {
     res.send("register route");
 });
 
 router.post("/login", async (req, res, next) => {
-    res.send("login route");
+    const user = await User.findAll({
+        where: {
+            id: 1,
+        },
+    });
+
+    // Send
+    res.send({
+        message: "Usuario obtenido con éxito",
+        data: user,
+    });
 });
 
 router.post("/refresh-token", async (req, res, next) => {
@@ -16,4 +27,5 @@ router.post("/refresh-token", async (req, res, next) => {
 router.delete("/logout", async (req, res, next) => {
     res.send("logout route");
 });
-module.exports = router;
+
+export default router;
