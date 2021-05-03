@@ -5,13 +5,27 @@ GET http://localhost:3000
 POST http://localhost:3000/auth/login
 
 ### Register route
-POST http://localhost:3000/auth/Register
+POST http://localhost:4000/auth/Register
 
 ### Refresh token route
-POST http://localhost:3000/auth/refresh-token
+POST http://localhost:4000/auth/refresh-token
 
 ### Logout route
-DELETE http://localhost:3000/auth/logout 
+DELETE http://localhost:4000/auth/logout 
 
 ### Users route
-GET http://localhost:3000/api/users/
+GET http://localhost:4000/api/users/
+
+
+### Product route
+// product detail
+GET http://localhost:4000/api/products/2RD3110006
+
+// product udpdate
+PUT http://localhost:4000/api/products/10867
+
+### Subcategories route
+// product detail
+GET http://localhost:4000/api/subcategories
+
+PUT http://localhost:4000/api/subcategories/1
