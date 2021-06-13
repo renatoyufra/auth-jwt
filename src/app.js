@@ -3,6 +3,7 @@ import morgan from "morgan";
 
 const createError = require("http-errors");
 
+import cors from "cors";
 // Importing routes
 import authRoute from "./routes/auth";
 import userRoute from "./routes/users";
@@ -14,7 +15,7 @@ const app = express();
 // middlewares
 app.use(morgan("dev"));
 app.use(json());
-
+app.use(cors());
 // routes
 app.get("/", async (req, res, next) => {
     res.send("Hello cuy.");
@@ -29,7 +30,7 @@ app.use(async (req, res, next) => {
     // const error = new Error("Not Found");
     // error.status = 404;
     // next(error);
-    next(createError.NotFound());
+    next();
 });
 
 app.use((err, req, res, next) => {

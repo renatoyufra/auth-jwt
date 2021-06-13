@@ -14,7 +14,7 @@ router.post("/login", async (req, res, next) => {
     });
 
     // Send
-    res.send({
+    res.status(401).send({
         message: "Usuario obtenido con éxito",
         data: user,
     });
